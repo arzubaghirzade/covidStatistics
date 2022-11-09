@@ -1,0 +1,34 @@
+<section *ngIf="cases" class="card-layout margin-bottom">
+  <div class="card" *ngFor="let item of cases | keyvalue">
+    <img
+      class="card-icon margin-right"
+      src="../../../../../../assets/images/coronavirus-{{ item.key }}.svg"
+      alt="coronavirus"
+    />
+    <div class="card-content">
+      <label
+        ><strong class="capitalize"> Total {{ item.key }}</strong></label
+      >
+      <strong class="case-value margin-top">
+        {{ item.value | number: "1.0-0":"en-Us" }}
+      </strong>
+      <strong class="margin-top" ngClass="color--{{ item.key }}">
+        ({{ item.value | populationPercent: population }} %)
+      </strong>
+    </div>
+  </div>
+</section>
+<ng-container *ngIf="vaccinated != null">
+  <h2 class="font-normal">Vaccinated population</h2>
+  <div class="d-flex">
+    <mat-progress-bar
+      mode="determinate"
+      class="margin-right"
+      ngClass="progress--vaccinated"
+      [value]="vaccinated | populationPercent: population"
+    ></mat-progress-bar>
+    <strong ngClass="progress--vaccinated"
+      >{{ vaccinated | populationPercent: population }} %</strong
+    >
+  </div>
+</ng-container>

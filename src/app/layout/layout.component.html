@@ -1,0 +1,33 @@
+<section class="layout">
+  <header class="layout-header flex-center-between">
+    <label class="font-18"
+      ><span>Coronavirus(COVID-19) {{ country }}</span></label
+    >
+    <div class="population">
+      <strong>{{ population | number: "1.0-0":"en-Us" }} </strong>
+      <small>population</small>
+    </div>
+    <app-date-info
+      (showPreviousDate)="showPreviousDate($event)"
+      (activateLoader)="activateLoader($event)"
+    ></app-date-info>
+  </header>
+  <div class="info-title-div flex-center-between" *ngIf="!loader">
+    <div>
+      <h2 class="inline-block margin-right">
+        {{ previousDate ? "Statistics for" : "Current situasion" }}
+      </h2>
+      <strong *ngIf="previousDate">{{ previousDate }}</strong>
+    </div>
+    <button *ngIf="previousDate" mat-button (click)="resetPreviousCases()">
+      <strong class="color-black">Show current cases</strong>
+    </button>
+  </div>
+  <app-info
+    *ngIf="info || previousDate"
+    [info]="info"
+    [population]="population"
+    [vaccinated]="vaccinated"
+  ></app-info>
+  <app-global-loader *ngIf="loader"></app-global-loader>
+</section>

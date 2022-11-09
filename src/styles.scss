@@ -1,1 +1,112 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --main-color: #5e97f5;
+  --font-color: #707070;
+  --btn-height: 40px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--font-color);
+  font-family: Arial, Helvetica, sans-serif;
+}
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1 !important;
+}
+::-webkit-scrollbar-thumb {
+  background: #d9d9d9 !important;
+}
+::-webkit-scrollbar-thumb {
+  background: #4b585e !important;
+}
+.layout {
+  box-shadow: 0 2px 5px rgb(143 143 143 / 21%);
+  padding: 1rem;
+  height: 100vh;
+  border-radius: 6px;
+  background: #f6f2f2;
+}
+header {
+  padding: 1rem 0;
+  border-bottom: 1px solid #d9d9d9;
+  &.layout-header {
+    margin: 0 0.5rem;
+  }
+  label {
+    margin-right: 2.5rem;
+    color: #3ecd3a;
+  }
+}
+.main-btn {
+  background: var(--main-color);
+  height: var(--btn-height) !important;
+  color: #fff;
+  &.load-more {
+    width: 100px;
+    margin: 0 auto;
+  }
+}
+.mat-progress-bar {
+  height: 20px !important;
+  border-radius: 4px !important;
+  width: 95% !important;
+  margin-right: 1rem;
+}
+.mat-progress-bar-fill::after {
+  background-color: #e49d62 !important;
+}
+.population {
+  display: flex;
+  width: auto;
+  flex-direction: column;
+  align-items: center;
+  strong {
+    font-size: 45px;
+    color: #5e97f5;
+  }
+}
+.card-layout {
+  display: grid;
+  grid-template-columns: 31% 31% 31%;
+  grid-gap: 2rem;
+  padding-top: 1rem;
+  min-height: 150px;
+  .card {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgb(143 143 143 / 21%);
+    padding: 1rem;
+    background: #fff;
+  }
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    .case-value {
+      color: #000;
+      font-size: 18px;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .card-layout {
+    display: grid;
+    grid-template-columns: 50% 50% !important;
+    grid-gap: 0.5rem;
+    padding-top: 0.5rem;
+  }
+}
+@media (max-width: 980px) {
+  .card-layout {
+    display: grid;
+    grid-template-columns: 100% !important;
+    grid-gap: 0.5rem;
+    padding-top: 0.5rem;
+  }
+}
+@import url(../src/assets/css/_global.scss);
+@import url(../src/assets/css/_loader.scss);
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";

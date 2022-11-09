@@ -1,0 +1,60 @@
+.d-flex {
+  display: flex;
+}
+.flex-center-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.inline-block {
+  display: inline-block;
+}
+.d-block {
+  display: block !important;
+}
+.font-14 {
+  font-size: 14px !important;
+}
+.font-16 {
+  font-size: 16px;
+}
+.font-18 {
+  font-size: 18px;
+}
+.font-normal {
+  font-weight: normal;
+}
+.margin-right {
+  margin-right: 1rem;
+}
+.margin-top {
+  margin-top: 1rem;
+}
+.margin-bottom {
+  margin-bottom: 1rem;
+}
+.margin-card-label {
+  margin: 1rem 1rem 1rem 0;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+.color-black {
+  color: #000;
+}
+.color-green,
+.color--recoveredPercent {
+  color: rgb(72, 255, 72);
+}
+.color-blue,
+.color--confirmedPercent {
+  color: #5e97f5;
+}
+.color-red,
+.color--deathsPercent {
+  color: rgb(255, 57, 57);
+}
+.card-icon {
+  width: 85px;
+  height: 85px;
+}
